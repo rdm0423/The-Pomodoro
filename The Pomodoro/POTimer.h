@@ -10,6 +10,12 @@
 
 @interface POTimer : NSObject
 
+@property (nonatomic, assign) NSInteger minutes;
+@property (nonatomic, assign) NSInteger seconds;
+
 + (POTimer *)sharedInstance;
+- (void)startTimer;
+- (void)cancelTimer;
+
 
 @end

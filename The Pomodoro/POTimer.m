@@ -8,6 +8,13 @@
 
 #import "POTimer.h"
 
+@interface POTimer ()
+
+@property (nonatomic, strong) BOOL isOn;
+
+
+@end
+
 @implementation POTimer
 
 + (POTimer *)sharedInstance {
@@ -17,6 +24,39 @@
         sharedInstance = [POTimer new];
     });
     return sharedInstance;
+    
+}
+
+
+- (bool)isOn {
+    
+
+}
+
+
+- (void)startTimer {
+    
+    
+    
+}
+
+- (void)cancelTimer {
+    
+    
+}
+
+- (void)endTimer {
+    
+    
+}
+
+- (void)decreaseSecond {
+    
+    
+}
+
+- (void)isActive {
+    
     
 }
 
