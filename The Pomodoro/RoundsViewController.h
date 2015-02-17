@@ -8,11 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+static NSString * const NewRoundTimeNotificationName = @"NewRoundTimeNotification";
+
 @interface RoundsViewController : UIViewController
 
-@property (nonatomic, assign) NSInteger currentRound;
-@property (nonatomic, strong) UITableView *tableView;
-
-- (NSArray *)timesForEachRound;
 
 @end

@@ -38,13 +38,13 @@ NSString * const SecondTickNotification = @"SecondTick";
 - (void)cancelTimer {
     self.isOn = NO;
     
-    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(decreaseSecond) object:self];
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(decreaseSecond) object:nil];
 }
 
 - (void)endTimer {
     self.isOn = NO;
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:TimerCompleteNotification object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:TimerCompleteNotification object:nil userInfo:nil];
 }
 
 - (void)decreaseSecond {
@@ -58,7 +58,7 @@ NSString * const SecondTickNotification = @"SecondTick";
             self.minutes--;
         }
         
-        [[NSNotificationCenter defaultCenter] postNotificationName:SecondTickNotification object:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:SecondTickNotification object:nil userInfo:nil];
         
     } else {
         if (self.seconds == 0) {

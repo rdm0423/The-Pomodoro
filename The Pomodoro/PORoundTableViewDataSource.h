@@ -11,6 +11,10 @@
 
 @interface PORoundTableViewDataSource : NSObject <UITableViewDataSource>
 
-- (NSArray *)timesForEachRound;
+@property (nonatomic, assign) NSInteger currentRound;
+
+- (NSNumber *)roundAtIndex:(NSInteger)index;
+- (void)registerTableView:(UITableView *)tableView;
+
 
 @end
