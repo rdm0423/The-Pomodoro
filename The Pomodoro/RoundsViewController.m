@@ -48,17 +48,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
+    
     self.title = @"Rounds";
     
     self.dataSource = [PORoundTableViewDataSource new];
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
-    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];   // removes table lines
+    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleSingleLine];   // removes table lines
     [self.view addSubview:self.tableView];
 
     self.tableView.dataSource = self.dataSource;
     self.tableView.delegate = self;
     
-    [self.tableView registerClass:[UITableView class] forCellReuseIdentifier:@"cell"];
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     
     [self selectCurrentRound];
     [self updateTimer];
@@ -69,6 +71,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     self.dataSource.currentRound = indexPath.row;
     [self updateTimer];
+    [[NSNotificationCenter defaultCenter] postNotificationName:SecondTickNotification object:nil];
 }
 
 //- (void)roundSelected

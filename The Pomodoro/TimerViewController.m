@@ -41,6 +41,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self registerFOrNotifications];
+    
     self.title = @"Focus";
     
     ////// Set color
@@ -67,13 +69,20 @@
     [self updateButton];
 }
 
-- (void)updateTimerLabel {
+- (void)updateTimerLabel{
     if ([POTimer sharedInstance].seconds < 10) {
         self.timerLabel.text = [NSString stringWithFormat:@"%ld:0%ld", (long)[POTimer sharedInstance].minutes, (long)[POTimer sharedInstance].seconds];
     } else {
         self.timerLabel.text = [NSString stringWithFormat:@"%ld:%ld", (long)[POTimer sharedInstance].minutes, (long)[POTimer sharedInstance].seconds];
     }
     
+}
+
+-(void)updateTimerLabel:(NSNotification *)notification
+{
+//    self.timerLabel = notification.userInfo;
+    
+    NSLog(@"This is what we're passing: %@",notification.userInfo);
 }
 
 - (void)updateButton {

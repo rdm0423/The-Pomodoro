@@ -9,6 +9,7 @@
 #import "POAppDelegate.h"
 #import "TimerViewController.h"
 #import "RoundsViewController.h"
+#import "AppearanceController.h"
 
 @implementation POAppDelegate
 
@@ -27,9 +28,11 @@
     
     
     UITabBarController *tabBarController = [UITabBarController new];
-    tabBarController.viewControllers = @[roundsViewController, timerViewController];
+    tabBarController.viewControllers = @[[[UINavigationController alloc] initWithRootViewController:roundsViewController], [[UINavigationController alloc] initWithRootViewController:timerViewController]];
     self.window.rootViewController = tabBarController;
     
+    
+    [AppearanceController setUpAppearance];
     
     
     self.window.backgroundColor = [UIColor whiteColor];

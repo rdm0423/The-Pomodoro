@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+static NSString * const newTimeKey = @"changeTimer";
+
 @interface TimerViewController : UIViewController
 
 @end

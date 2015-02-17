@@ -15,6 +15,7 @@
 
 - (NSNumber *)roundAtIndex:(NSInteger)index;
 - (void)registerTableView:(UITableView *)tableView;
+- (NSArray *)timesForEachRound;
 
 
 @end
