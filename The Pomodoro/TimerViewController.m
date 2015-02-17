@@ -23,7 +23,7 @@
 }
 
 - (void)unregisterForNotifications {
-    [NSNotificationCenter defaultCenter] removeObserver:self name: object:nil];
+//    [NSNotificationCenter defaultCenter] removeObserver:self name: object:nil];
     
 }
 

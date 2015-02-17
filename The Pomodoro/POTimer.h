@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-NSString * const TimerCompleteNotification = @"TimerComplete";
-NSString * const SecondTickNotification = @"SecondTick";
+extern NSString * const TimerCompleteNotification;
+extern NSString * const SecondTickNotification;
 
 @interface POTimer : NSObject
 
