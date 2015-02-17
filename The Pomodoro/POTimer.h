@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+NSString * const TimerCompleteNotification = @"TimerComplete";
+NSString * const SecondTickNotification = @"SecondTick";
+
 @interface POTimer : NSObject
 
 @property (nonatomic, assign) NSInteger minutes;

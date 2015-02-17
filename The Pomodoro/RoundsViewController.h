@@ -10,4 +10,9 @@
 
 @interface RoundsViewController : UIViewController
 
+@property (nonatomic, assign) NSInteger currentRound;
+@property (nonatomic, strong) UITableView *tableView;
+
+- (NSArray *)timesForEachRound;
+
 @end

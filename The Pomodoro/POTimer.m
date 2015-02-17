@@ -8,10 +8,11 @@
 
 #import "POTimer.h"
 
+
+
 @interface POTimer ()
 
-@property (nonatomic, strong) BOOL isOn;
-
+@property (nonatomic, assign) BOOL isOn;
 
 @end
 
@@ -27,36 +28,52 @@
     
 }
 
-
-- (bool)isOn {
-    
-
-}
-
-
 - (void)startTimer {
     
-    
-    
+    self.isOn = YES;
+    [self isActive];
 }
 
 - (void)cancelTimer {
+    self.isOn = NO;
     
-    
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(decreaseSecond) object:self];
 }
 
 - (void)endTimer {
+    self.isOn = NO;
     
-    
+    [[NSNotificationCenter defaultCenter] postNotificationName:TimerCompleteNotification object:nil];
 }
 
 - (void)decreaseSecond {
     
+    if (self.seconds > 0) {
+        self.seconds--;
+    }
+    if (self.minutes > 0) {
+        if (self.seconds == 0) {
+            self.seconds = 59;
+            self.minutes--;
+        }
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:SecondTickNotification object:nil];
+        
+    } else {
+        if (self.seconds == 0) {
+            [self endTimer];
+        }
+    }
     
 }
 
 - (void)isActive {
+    [NSObject cancelPreviousPerformRequestsWithTarget:self];
     
+    if (self.isOn == YES) {
+        [self decreaseSecond];
+        [self performSelector:@selector(isActive) withObject:nil afterDelay:1.0];
+    }
     
 }
 

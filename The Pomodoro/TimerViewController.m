@@ -7,6 +7,7 @@
 //
 
 #import "TimerViewController.h"
+#import "POTimer.h"
 
 @interface TimerViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
@@ -15,6 +16,22 @@
 @end
 
 @implementation TimerViewController
+
+- (void)registerFOrNotifications {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTimerLabel) name:SecondTickNotification object:nil];
+    
+}
+
+- (void)unregisterForNotifications {
+    [NSNotificationCenter defaultCenter] removeObserver:self name: object:nil];
+    
+}
+
+- (void)dealloc {
+    [self unregisterForNotifications];
+    
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -26,11 +43,23 @@
 
 }
 
+
+
 - (IBAction)timerButton:(id)sender {
     
     
     
 }
+
+- (void)updateTimerLabel {
+    if ([POTimer sharedInstance].seconds < 10) {
+        self.timerLabel.text = [NSString stringWithFormat:@"%ld:0%ld", (long)[POTimer sharedInstance].minutes, (long)[POTimer sharedInstance].seconds];
+    } else {
+        self.timerLabel.text = [NSString stringWithFormat:@"%ld:%ld", (long)[POTimer sharedInstance].minutes, (long)[POTimer sharedInstance].seconds];
+    }
+    
+}
+
 
 
 @end

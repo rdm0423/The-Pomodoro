@@ -7,8 +7,13 @@
 //
 
 #import "RoundsViewController.h"
+#import "PORoundTableViewDataSource.h"
+#import "POTimer.h"
+#import "TimerViewController.h"
 
-@interface RoundsViewController ()
+@interface RoundsViewController () <UITableViewDelegate>
+
+@property (nonatomic, strong) PORoundTableViewDataSource *dataSource;
 
 @end
 
@@ -16,22 +21,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
+    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    [self.view addSubview:self.tableView];
+    
+    
+    self.dataSource = [PORoundTableViewDataSource new];
+    self.tableView.dataSource = self.dataSource;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)roundSelected
+{
+    [POTimer sharedInstance].minutes = [[self.dataSource.timesForEachRound objectAtIndex:self.currentRound] integerValue];
+    [POTimer sharedInstance].seconds = 0;
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

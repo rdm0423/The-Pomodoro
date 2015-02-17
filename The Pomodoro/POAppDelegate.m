@@ -17,18 +17,17 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     
-    TimerViewController *timerViewController = [TimerViewController new];
-    timerViewController.tabBarItem.title = @"Timer";
-    timerViewController.tabBarItem.image = [UIImage imageNamed:@"list"];
-    
-    
     RoundsViewController *roundsViewController = [RoundsViewController new];
     roundsViewController.tabBarItem.title = @"Rounds";
-    roundsViewController.tabBarItem.image = [UIImage imageNamed:@"time"];
+    roundsViewController.tabBarItem.image = [UIImage imageNamed:@"list"];
+    
+    TimerViewController *timerViewController = [TimerViewController new];
+    timerViewController.tabBarItem.title = @"Timer";
+    timerViewController.tabBarItem.image = [UIImage imageNamed:@"time"];
     
     
     UITabBarController *tabBarController = [UITabBarController new];
-    tabBarController.viewControllers = @[timerViewController, roundsViewController];
+    tabBarController.viewControllers = @[roundsViewController, timerViewController];
     self.window.rootViewController = tabBarController;
     
     
