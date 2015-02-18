@@ -19,6 +19,7 @@
 		7141B301193DBDFE0084F9F1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7141B2E9193DBDFD0084F9F1 /* UIKit.framework */; };
 		7141B309193DBDFE0084F9F1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7141B307193DBDFE0084F9F1 /* InfoPlist.strings */; };
 		7141B30B193DBDFE0084F9F1 /* The_PomodoroTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7141B30A193DBDFE0084F9F1 /* The_PomodoroTests.m */; };
+		FF4186A61A95394100F6CB0D /* AlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF4186A51A95394100F6CB0D /* AlertViewController.m */; };
 		FFBA3D9A1A93F82300BD8BFE /* AppearanceController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBA3D991A93F82300BD8BFE /* AppearanceController.m */; };
 		FFFCAC921A929A2300156E13 /* RoundsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFFCAC911A929A2300156E13 /* RoundsViewController.m */; };
 		FFFCAC961A929A3600156E13 /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFFCAC941A929A3600156E13 /* TimerViewController.m */; };
@@ -54,6 +55,8 @@
 		7141B306193DBDFE0084F9F1 /* The PomodoroTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "The PomodoroTests-Info.plist"; sourceTree = "<group>"; };
 		7141B308193DBDFE0084F9F1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7141B30A193DBDFE0084F9F1 /* The_PomodoroTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = The_PomodoroTests.m; sourceTree = "<group>"; };
+		FF4186A41A95394100F6CB0D /* AlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertViewController.h; sourceTree = "<group>"; };
+		FF4186A51A95394100F6CB0D /* AlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertViewController.m; sourceTree = "<group>"; };
 		FFBA3D981A93F82200BD8BFE /* AppearanceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppearanceController.h; sourceTree = "<group>"; };
 		FFBA3D991A93F82300BD8BFE /* AppearanceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppearanceController.m; sourceTree = "<group>"; };
 		FFFCAC901A929A2300156E13 /* RoundsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundsViewController.h; sourceTree = "<group>"; };
@@ -128,6 +131,8 @@
 				7141B2F5193DBDFD0084F9F1 /* POAppDelegate.m */,
 				FFBA3D981A93F82200BD8BFE /* AppearanceController.h */,
 				FFBA3D991A93F82300BD8BFE /* AppearanceController.m */,
+				FF4186A41A95394100F6CB0D /* AlertViewController.h */,
+				FF4186A51A95394100F6CB0D /* AlertViewController.m */,
 				FFFCAC9B1A929F7400156E13 /* Timer */,
 				FFFCAC9F1A92B1A100156E13 /* Rounds */,
 				7141B2F7193DBDFD0084F9F1 /* Images.xcassets */,
@@ -292,6 +297,7 @@
 				7141B2F6193DBDFD0084F9F1 /* POAppDelegate.m in Sources */,
 				FFFCAC9E1A92B19700156E13 /* PORoundTableViewDataSource.m in Sources */,
 				FFFCAC921A929A2300156E13 /* RoundsViewController.m in Sources */,
+				FF4186A61A95394100F6CB0D /* AlertViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

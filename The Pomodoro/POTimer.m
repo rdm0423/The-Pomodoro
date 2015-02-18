@@ -33,6 +33,8 @@ NSString * const SecondTickNotification = @"SecondTick";
     
     self.isOn = YES;
     [self isActive];
+    
+    [self startAlertCountdown];
 }
 
 - (void)cancelTimer {
@@ -51,6 +53,8 @@ NSString * const SecondTickNotification = @"SecondTick";
     
     if (self.seconds > 0) {
         self.seconds--;
+     
+        [[NSNotificationCenter defaultCenter] postNotificationName:SecondTickNotification object:nil userInfo:nil];
     }
     if (self.minutes > 0) {
         if (self.seconds == 0) {
@@ -75,8 +79,24 @@ NSString * const SecondTickNotification = @"SecondTick";
         [self decreaseSecond];
         [self performSelector:@selector(isActive) withObject:nil afterDelay:1.0];
     }
+}
+
+- (void)startAlertCountdown {
+    
+    NSInteger currentMinutes = (self.minutes) * 60;
+    NSInteger currentSeconds = self.seconds;
+    NSInteger fireSeconds = currentMinutes + currentSeconds;
+    
+    UILocalNotification *localNotification = [UILocalNotification new];
+    NSDate *fireDate = [[NSDate date] dateByAddingTimeInterval:fireSeconds];
+    localNotification.fireDate = fireDate;
+    localNotification.timeZone = [NSTimeZone defaultTimeZone];
+    
+    
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
     
 }
+
 
 
 

@@ -56,7 +56,7 @@
 - (IBAction)startTimer:(id)sender {
     [[POTimer sharedInstance] startTimer];
     self.timerButton.enabled = NO;
-    [self.timerButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+    [self.timerButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
 }
 
 //- (IBAction)timerButton:(id)sender {
