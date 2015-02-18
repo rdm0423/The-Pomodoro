@@ -19,6 +19,7 @@
 		7141B301193DBDFE0084F9F1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7141B2E9193DBDFD0084F9F1 /* UIKit.framework */; };
 		7141B309193DBDFE0084F9F1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7141B307193DBDFE0084F9F1 /* InfoPlist.strings */; };
 		7141B30B193DBDFE0084F9F1 /* The_PomodoroTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7141B30A193DBDFE0084F9F1 /* The_PomodoroTests.m */; };
+		FFBA3D9A1A93F82300BD8BFE /* AppearanceController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBA3D991A93F82300BD8BFE /* AppearanceController.m */; };
 		FFFCAC921A929A2300156E13 /* RoundsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFFCAC911A929A2300156E13 /* RoundsViewController.m */; };
 		FFFCAC961A929A3600156E13 /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFFCAC941A929A3600156E13 /* TimerViewController.m */; };
 		FFFCAC971A929A3600156E13 /* TimerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFFCAC951A929A3600156E13 /* TimerViewController.xib */; };
@@ -53,6 +54,8 @@
 		7141B306193DBDFE0084F9F1 /* The PomodoroTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "The PomodoroTests-Info.plist"; sourceTree = "<group>"; };
 		7141B308193DBDFE0084F9F1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7141B30A193DBDFE0084F9F1 /* The_PomodoroTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = The_PomodoroTests.m; sourceTree = "<group>"; };
+		FFBA3D981A93F82200BD8BFE /* AppearanceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppearanceController.h; sourceTree = "<group>"; };
+		FFBA3D991A93F82300BD8BFE /* AppearanceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppearanceController.m; sourceTree = "<group>"; };
 		FFFCAC901A929A2300156E13 /* RoundsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundsViewController.h; sourceTree = "<group>"; };
 		FFFCAC911A929A2300156E13 /* RoundsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundsViewController.m; sourceTree = "<group>"; };
 		FFFCAC931A929A3600156E13 /* TimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerViewController.h; sourceTree = "<group>"; };
@@ -123,6 +126,8 @@
 			children = (
 				7141B2F4193DBDFD0084F9F1 /* POAppDelegate.h */,
 				7141B2F5193DBDFD0084F9F1 /* POAppDelegate.m */,
+				FFBA3D981A93F82200BD8BFE /* AppearanceController.h */,
+				FFBA3D991A93F82300BD8BFE /* AppearanceController.m */,
 				FFFCAC9B1A929F7400156E13 /* Timer */,
 				FFFCAC9F1A92B1A100156E13 /* Rounds */,
 				7141B2F7193DBDFD0084F9F1 /* Images.xcassets */,
@@ -280,6 +285,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFBA3D9A1A93F82300BD8BFE /* AppearanceController.m in Sources */,
 				FFFCAC961A929A3600156E13 /* TimerViewController.m in Sources */,
 				7141B2F2193DBDFD0084F9F1 /* main.m in Sources */,
 				FFFCAC9A1A929F5500156E13 /* POTimer.m in Sources */,

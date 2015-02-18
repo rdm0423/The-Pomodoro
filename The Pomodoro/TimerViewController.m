@@ -16,6 +16,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 @property (weak, nonatomic) IBOutlet UIButton *timerButton;
+@property (weak, nonatomic) IBOutlet UIImageView *imageBlock;
 
 @end
 
