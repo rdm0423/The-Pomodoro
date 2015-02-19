@@ -7,8 +7,11 @@
 //
 
 #import "AlertViewController.h"
+#import "PORoundTableViewDataSource.h"
 
 @interface AlertViewController ()
+
+@property (nonatomic, strong) UITableView *tableView;
 
 @end
 
@@ -41,13 +44,16 @@
     
     [alertController addAction:[UIAlertAction actionWithTitle:@"Another Rounnd" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         
-         tabBarController.selectedViewController = tabBarController.viewControllers[0];
+        tabBarController.selectedViewController = tabBarController.viewControllers[0];
 
+        [[NSNotificationCenter defaultCenter] postNotificationName:selectNextRow object:nil];
+        
     }]];
     [alertController addAction:[UIAlertAction actionWithTitle:@"Finished" style:UIAlertActionStyleCancel handler:nil]];
     
     
     [tabBarController presentViewController:alertController animated:YES completion:nil];
+
 }
 
 

@@ -79,15 +79,17 @@
     
 }
 
--(void)updateTimerLabel:(NSNotification *)notification
-{
-//    self.timerLabel = notification.userInfo;
-    
-    NSLog(@"This is what we're passing: %@",notification.userInfo);
-}
 
 - (void)updateButton {
-    self.timerButton.enabled = YES;
+    
+    if(self.timerButton.enabled == NO)
+    {
+        self.timerButton.enabled = YES;
+
+    }else{
+        self.timerButton.enabled = NO;
+    }
+    
     [self.timerButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 }
 

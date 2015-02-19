@@ -10,6 +10,7 @@
 #import "PORoundTableViewDataSource.h"
 #import "POTimer.h"
 #import "TimerViewController.h"
+#import "AlertViewController.h"
 
 @interface RoundsViewController () <UITableViewDelegate>
 
@@ -32,7 +33,7 @@
 
 
 - (void)registerForNotifications {
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(endRound:) name:TimerCompleteNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(selectNextRowAfterNotification) name:selectNextRow object:nil];
 }
 
 - (void)unregisterForNotifications {
@@ -43,12 +44,18 @@
     [self unregisterForNotifications];
 }
 
+- (void)selectNextRowAfterNotification
+{
+    NSInteger index = self.dataSource.currentRound;
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index + 1 inSection:0];
+    [self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition: UITableViewScrollPositionNone];
+}
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
+    [self registerForNotifications];
     
     self.title = @"Rounds";
     

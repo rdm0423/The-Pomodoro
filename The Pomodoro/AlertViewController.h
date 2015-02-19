@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+static NSString *selectNextRow = @"select";
+
 @interface AlertViewController : UIViewController
 
 + (AlertViewController *)sharedInstance;
