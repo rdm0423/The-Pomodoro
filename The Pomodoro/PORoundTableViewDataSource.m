@@ -45,8 +45,7 @@ static NSString * const CurrentRoundKey = @"CurrentRound";
     return [self timesForEachRound][index];
 }
 
-- (NSArray *)timesForEachRound
-{
+- (NSArray *)timesForEachRound {
     return @[@25, @0, @25, @5, @25, @5, @25, @15];
 }
 
